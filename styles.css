@@ -352,15 +352,10 @@ button {
   gap: 8px;
   padding: 16px 24px 24px;
   border-radius: 24px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.13) 0%,
-    rgba(255, 255, 255, 0.04) 40%,
-    rgba(255, 255, 255, 0.07) 100%
-  );
-  -webkit-backdrop-filter: saturate(200%) blur(32px) brightness(1.08);
-  backdrop-filter: saturate(200%) blur(32px) brightness(1.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(12, 16, 32, 0.55);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);
@@ -549,7 +544,7 @@ button {
 }
 .clients__list {
   display: flex;
-  gap: 72px;
+  gap: 40px;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
@@ -569,9 +564,11 @@ button {
 }
 .client-logo {
   height: 72px;
-  max-width: 160px;
   width: auto;
+  max-width: 220px;
+  min-width: 40px;
   object-fit: contain;
+  object-position: center;
   display: block;
   opacity: 0.85;
   filter: brightness(0) invert(1);
@@ -580,6 +577,18 @@ button {
 }
 .client-logo:hover {
   opacity: 1;
+}
+.client-logo--sm {
+  height: 58px;
+  max-width: 160px;
+}
+.client-logo--md {
+  height: 85px;
+  max-width: 240px;
+}
+.client-logo--lg {
+  height: 112px;
+  max-width: 300px;
 }
 
 .about {
@@ -702,12 +711,16 @@ button {
   position: sticky;
   top: 0;
   min-height: 100vh;
-  padding: 80px 0 96px;
+  padding: 80px 0 80px;
   background: var(--bg);
   z-index: var(--i, 1);
 }
 .case:last-child {
   /* nothing to cover it — keep it static */
+}
+/* Extra breathing room only on Dra Grasielle before Ali Badawi slides in */
+.case:nth-child(2) {
+  padding-bottom: 160px;
 }
 .projects__end {
   /* Spacer so the last case can settle before the CTA shows up. */
@@ -718,7 +731,7 @@ button {
   z-index: 50;
   background: var(--bg);
   padding: 0 0 200px;
-  margin-top: -120px;
+  margin-top: -80px;
 }
 @media (prefers-reduced-motion: reduce) {
   .case {
@@ -867,6 +880,8 @@ button {
    Why Venza
    ===================================================== */
 .why {
+  position: relative;
+  z-index: 100;
   background: linear-gradient(
     180deg,
     var(--bg-blue-4) 0%,
@@ -1679,7 +1694,11 @@ button {
     padding: 16px 18px;
   }
 
-  /* ── Hero (escala própria) ── */
+  .navbar__dropdown {
+    background: rgba(10, 13, 28, 0.65);
+    -webkit-backdrop-filter: saturate(180%) blur(40px);
+    backdrop-filter: saturate(180%) blur(40px);
+  }
   .hero { min-height: auto; padding: 100px 0 64px; text-align: center; }
   .hero .display {
     font-size: 48px;
@@ -1700,8 +1719,10 @@ button {
 
   /* ── Clients ── */
   .clients { padding: 40px 0; }
-  .clients__list { gap: 24px; flex-wrap: nowrap; }
-  .client-logo { height: 56px; max-width: 120px; }
+  .clients__list { gap: 20px; flex-wrap: nowrap; }
+  .client-logo { height: 40px; max-width: 140px; }
+  .client-logo--sm { height: 28px; max-width: 100px; margin-inline: 16px; }
+  .client-logo--lg { height: 56px; max-width: 180px; }
 
   /* ── About ── */
   .about { padding: 64px 20px; }
@@ -1720,14 +1741,14 @@ button {
     line-height: 1.2;
     margin-bottom: 40px;
   }
-  .case { padding: 40px 0 64px; min-height: auto; }
+  .case { padding: 40px 0 80px; min-height: 130svh; }
   .case__head { flex-direction: row; gap: 12px; align-items: center; flex-wrap: wrap; }
   .case__intro { grid-template-columns: 1fr; gap: 20px; }
   .case__title { font-size: 24px; letter-spacing: -0.04em; line-height: 1.2; }
   .case__copy { grid-template-columns: 1fr; gap: 12px; font-size: 14px; line-height: 1.6; }
   .case__gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
   .case__img { aspect-ratio: 4 / 5; }
-  .projects .center { padding: 0 0 80px; margin-top: -40px; }
+  .projects .center { padding: 0 0 0; margin-top: -360px; }
 
   /* ── Por Que Venza ── */
   .why { padding: 64px 20px; }
