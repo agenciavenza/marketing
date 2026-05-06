@@ -1196,7 +1196,7 @@ button {
   grid-template-columns: 391px 1fr;
   align-items: end;
   column-gap: 40px;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 .why__head .h2 {
   width: 100%;
