@@ -953,7 +953,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 84px 64px 82px;
+  padding: 84px max(64px, calc((100% - 1312px) / 2 + 64px)) 82px;
   pointer-events: none;
 }
 .fotoc__topbar {
@@ -1196,7 +1196,10 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 96px;
   align-items: end;
-  margin-bottom: 60px;
+  margin-bottom: 32px;
+}
+.why__head h2 {
+  margin-bottom: 0;
 }
 .why__text {
   font-size: 24px;
@@ -1204,6 +1207,8 @@ button {
   letter-spacing: -0.03em;
   color: var(--text-muted);
   margin: 0;
+  padding-top: 12px;
+  border-top: none;
 }
 
 .cards__wrapper {
