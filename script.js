@@ -245,19 +245,19 @@
     {
       name: 'João Pariz',
       role: 'Screen Director & Videomaker',
-      photo: 'Images/socios/joao victor.png',
+      photo: 'Images/socios/joao victor.webp',
       bio: 'Videomaker especializado em narrativa visual, João participou na produção audiovisual de eventos comerciais, festivos e internos. Atuou com diversos segmentos e setores do mercado, acumulando versatilidade para executar produções complexas e conduzir histórias que traduzam a essência de cada marca e de cada cliente que ele trabalha e/ou já trabalhou.'
     },
     {
       name: 'Ruan Bueno',
       role: 'Founder & Creative Director',
-      photo: 'Images/socios/ruan bueno.png',
+      photo: 'Images/socios/ruan bueno.webp',
       bio: 'Diretor Criativo focado em unir objetivo, ideia e propósito em cada criação. Ruan atua com produção de materiais gráficos para diversos setores e mercados, entregando resultados altamente técnicos com eficiência. Entre os projetos notórios que participou estão o Grupo Rafain, Moducasa, Kless e Itaipu Parquetec.'
     },
     {
       name: 'Liedson Cavalheiro',
       role: 'Founder & Sales Director',
-      photo: 'Images/socios/liedon cavalheiro.png',
+      photo: 'Images/socios/liedon cavalheiro.webp',
       bio: 'Diretor Comercial, Videomaker e Gestor de Tráfego. Liedson esteve à frente da produção audiovisual e na performance de campanhas de grandes marcas, unindo estratégias de audiovisual para social media com a distribuição desses materiais em múltiplos canais. Hábil para entender a necessidade de cada cliente e encontrar a solução que trará o melhor resultado.'
     }
   ];
