@@ -1169,6 +1169,16 @@ button {
   user-select: none;
   -webkit-user-drag: none;
 }
+.bridge__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent 0%, var(--bg) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .bridge__glow,
