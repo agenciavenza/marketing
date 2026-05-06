@@ -1,3 +1,49 @@
+// Bridge: glow burst fires only when mouse is over the logo image.
+(() => {
+  const logo  = document.querySelector('.bridge__logo');
+  const glow  = document.querySelector('.bridge__glow');
+  const burst = document.querySelector('.bridge__burst');
+  if (!logo || !glow || !burst) return;
+
+  logo.addEventListener('mouseenter', () => {
+    glow.classList.add('is-burst');
+    burst.classList.add('is-burst');
+  });
+
+  logo.addEventListener('mouseleave', () => {
+    glow.classList.remove('is-burst');
+    burst.classList.remove('is-burst');
+  });
+})();
+
+// Photo Carousel (Audiovisual section): prev/next slide switching.
+(() => {
+  const slides = Array.from(document.querySelectorAll('.fotoc__slide'));
+  const prevBtn = document.querySelector('.fotoc__arrow--prev');
+  const nextBtn = document.querySelector('.fotoc__arrow--next');
+  if (!slides.length || !prevBtn || !nextBtn) return;
+
+  let current = 0;
+
+  const goTo = (index) => {
+    slides[current].classList.remove('is-active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+  };
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Auto-advance every 6 seconds
+  let autoTimer = setInterval(() => goTo(current + 1), 6000);
+  const resetTimer = () => {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 6000);
+  };
+  prevBtn.addEventListener('click', resetTimer);
+  nextBtn.addEventListener('click', resetTimer);
+})();
+
 // Projects: sticky-stacking effect (poch.studio style).
 // Each .case is position: sticky at top:0 with an opaque background and an
 // increasing z-index, so the next case slides up and fully covers the
@@ -161,42 +207,33 @@
   });
 })();
 
-// About section: photo carousel.
+// About section: video play/pause with overlay button.
 (() => {
-  const carousel = document.querySelector('.about__carousel');
-  if (!carousel) return;
-  const slides = Array.from(carousel.querySelectorAll('.about__slide'));
-  const prevBtn = carousel.querySelector('.about__nav--prev');
-  const nextBtn = carousel.querySelector('.about__nav--next');
-  if (!slides.length) return;
+  const video = document.getElementById('about-video');
+  const btn   = document.getElementById('about-play-btn');
+  const wrap  = video ? video.closest('.about__video-wrap') : null;
+  if (!video || !btn || !wrap) return;
 
-  let current = 0;
-  let timer = null;
-
-  const show = (index) => {
-    slides[current].classList.remove('is-active');
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('is-active');
+  const setPlaying = (playing) => {
+    btn.classList.toggle('is-hidden', playing);
+    wrap.classList.toggle('is-playing', playing);
   };
 
-  const startAuto = () => {
-    timer = setInterval(() => show(current + 1), 5000);
-  };
-  const resetAuto = () => {
-    clearInterval(timer);
-    startAuto();
+  // Toggle on button click or clicking the video
+  const toggle = () => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   };
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => { show(current - 1); resetAuto(); });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => { show(current + 1); resetAuto(); });
-  }
+  btn.addEventListener('click', toggle);
+  video.addEventListener('click', toggle);
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    startAuto();
-  }
+  video.addEventListener('play',  () => setPlaying(true));
+  video.addEventListener('pause', () => setPlaying(false));
+  video.addEventListener('ended', () => setPlaying(false));
 })();
 
 // Team: always-expanded. Clicking a thumbnail triggers a FLIP swap animation.
@@ -206,22 +243,22 @@
 
   const members = [
     {
-      name: 'João Victor',
+      name: 'João Pariz',
       role: 'Screen Director & Videomaker',
       photo: 'Images/socios/joao victor.png',
-      bio: 'Videomaker com mais de 6 anos de experiência, participou na produção audiovisual de eventos comerciais, festivos e internos, além disso trabalhou com diversos segmentos e setores do mercado, proporcionando não só conhecimento técnico, mas também versatilidade para executar produções complexas e conduzir histórias que traduzam a essência de cada marca e de cada cliente que ele trabalha e/ou já trabalhou.'
+      bio: 'Videomaker especializado em narrativa visual, João participou na produção audiovisual de eventos comerciais, festivos e internos. Atuou com diversos segmentos e setores do mercado, acumulando versatilidade para executar produções complexas e conduzir histórias que traduzam a essência de cada marca e de cada cliente que ele trabalha e/ou já trabalhou.'
     },
     {
       name: 'Ruan Bueno',
       role: 'Founder & Creative Director',
       photo: 'Images/socios/ruan bueno.png',
-      bio: 'Diretor Criativo com mais de 8 anos de experiência em produção de materiais gráficos para diversos setores e mercado, nosso diretor consegue unir objetivo, ideia e propósito em suas criações, atingindo o objetivo de cada cliente com eficiência e entregas altamente técnicas, entre os projetos notórios que participou estão o Grupo Rafain, Moducasa, Kless e Itaipu Parquetec.'
+      bio: 'Diretor Criativo focado em unir objetivo, ideia e propósito em cada criação. Ruan atua com produção de materiais gráficos para diversos setores e mercados, entregando resultados altamente técnicos com eficiência. Entre os projetos notórios que participou estão o Grupo Rafain, Moducasa, Kless e Itaipu Parquetec.'
     },
     {
       name: 'Liedson Cavalheiro',
       role: 'Founder & Sales Director',
       photo: 'Images/socios/liedon cavalheiro.png',
-      bio: 'Diretor Comercial, Videomaker e Gestor de Tráfego. Liedson esteve à frente da produção audiovisual e na performance de campanhas de grandes marcas, unindo seu conhecimento em estratégias de audiovisual para social media quanto na distribuição destes materiais em múltiplos canais, com mais de cinco anos de experiência entre os setores, é hábil para entender a necessidade de cada cliente e encontrar a solução que trará o melhor resultado.'
+      bio: 'Diretor Comercial, Videomaker e Gestor de Tráfego. Liedson esteve à frente da produção audiovisual e na performance de campanhas de grandes marcas, unindo estratégias de audiovisual para social media com a distribuição desses materiais em múltiplos canais. Hábil para entender a necessidade de cada cliente e encontrar a solução que trará o melhor resultado.'
     }
   ];
 

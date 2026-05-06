@@ -4,6 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Venza — Fora do Padrão. Conectados com Propósito.</title>
+
+    <!-- Open Graph / WhatsApp / Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agenciavenza.com.br/" />
+    <meta property="og:title" content="Venza — Fora do Padrão. Conectados com Propósito." />
+    <meta property="og:description" content="Agência de marketing com estratégia, criatividade e resultados reais. Posicionamos marcas com autenticidade e inteligência." />
+    <meta property="og:image" content="https://agenciavenza.com.br/Images/capa de compartilhamento.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Venza — Fora do Padrão. Conectados com Propósito." />
+    <meta name="twitter:description" content="Agência de marketing com estratégia, criatividade e resultados reais." />
+    <meta name="twitter:image" content="https://agenciavenza.com.br/Images/capa de compartilhamento.png" />
+
+    <!-- WhatsApp (usa og:) -->
+    <meta name="description" content="Agência de marketing com estratégia, criatividade e resultados reais. Posicionamos marcas com autenticidade e inteligência." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,21 +32,24 @@
     <link rel="icon" type="image/png" href="Images/favicon venza.png" />
     <link rel="apple-touch-icon" href="Images/favicon venza.png" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preload" href="Images/venza logo branca.png" as="image" />
-    <link rel="preload" href="Images/Sobre nos imagens/DSC00614.JPG" as="image" />
+    <!-- Preload above-the-fold images -->
+    <link rel="preload" href="Images/venza logo branca.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="Images/hero banner/big-circle.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="Images/Capa do Video.png" as="image" />
+    <link rel="preload" href="Images/Fotos Venza/DSC09452.JPG" as="image" />
     <link rel="dns-prefetch" href="https://api.whatsapp.com" />
   </head>
   <body>
     <!-- ============== NAVBAR (glass) ============== -->
     <nav class="navbar" aria-label="Principal">
       <div class="navbar__inner">
-        <a class="navbar__logo" href="#topo" aria-label="Venza"><img src="Images/venza logo branca.png" alt="Venza" decoding="async"></a>
+        <a class="navbar__logo" href="#topo" aria-label="Venza"><img src="Images/venza logo branca.png" alt="Venza" decoding="sync" loading="eager" fetchpriority="high"></a>
         <ul class="navbar__links">
           <li><a href="#sobre" data-nav-link>SOBRE</a></li>
           <li><a href="#projetos" data-nav-link>PROJETOS</a></li>
           <li><a href="#diferenciais" data-nav-link>DIFERENCIAIS</a></li>
+          <li><a href="#equipe" data-nav-link>EQUIPE</a></li>
           <li><a href="#feedbacks" data-nav-link>FEEDBACKS</a></li>
-          <li><a href="#contato" data-nav-link>CONTATO</a></li>
         </ul>
         <a class="navbar__cta" href="https://api.whatsapp.com/send?phone=5545998117039" target="_blank" rel="noopener">Agendar Uma Reunião</a>
         <button class="navbar__burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar-dropdown">
@@ -39,8 +61,8 @@
           <li><a href="#sobre" data-nav-link>SOBRE</a></li>
           <li><a href="#projetos" data-nav-link>PROJETOS</a></li>
           <li><a href="#diferenciais" data-nav-link>DIFERENCIAIS</a></li>
+          <li><a href="#equipe" data-nav-link>EQUIPE</a></li>
           <li><a href="#feedbacks" data-nav-link>FEEDBACKS</a></li>
-          <li><a href="#contato" data-nav-link>CONTATO</a></li>
         </ul>
         <a class="navbar__cta navbar__cta--mobile" href="https://api.whatsapp.com/send?phone=5545998117039" target="_blank" rel="noopener">Agendar Uma Reunião</a>
       </div>
@@ -50,11 +72,12 @@
     <header class="hero" id="topo">
       <div class="hero__bg" aria-hidden="true">
         <div class="hero__circle">
-          <img src="Images/hero banner/big-circle.png" alt="" decoding="async">
+          <img src="Images/hero banner/big-circle.png" alt="" decoding="sync" loading="eager" fetchpriority="high">
         </div>
       </div>
 
       <div class="hero__inner">
+        <p class="hero__eyebrow">Mais de 280 empresas atendidas</p>
         <h1 class="hero__title">
           <span class="weight-light">Fora do</span>
           <span class="accent">Padrão</span><span class="weight-light">.</span>
@@ -78,7 +101,6 @@
           <li><img class="client-logo" src="Images/logos/Rockfalls.png" alt="Rockfalls" loading="lazy" decoding="async"></li>
           <li><img class="client-logo client-logo--sm" src="Images/logos/ali badawi.png" alt="Ali Badawi" loading="lazy" decoding="async"></li>
           <li><img class="client-logo" src="Images/logos/k33 logo.png" alt="K33" loading="lazy" decoding="async"></li>
-          <li><img class="client-logo client-logo--sm" src="Images/logos/alexandra salles.png" alt="Alexandra Salles" loading="lazy" decoding="async"></li>
           <li><img class="client-logo" src="Images/logos/hanna beauty.png" alt="Hanna Beauty" loading="lazy" decoding="async"></li>
           <li><img class="client-logo client-logo--lg" src="Images/logos/Namar.png" alt="Namar" loading="lazy" decoding="async"></li>
           <!-- duplicate for seamless loop -->
@@ -91,7 +113,6 @@
           <li><img class="client-logo" src="Images/logos/Rockfalls.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></li>
           <li><img class="client-logo client-logo--sm" src="Images/logos/ali badawi.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></li>
           <li><img class="client-logo" src="Images/logos/k33 logo.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></li>
-          <li><img class="client-logo client-logo--sm" src="Images/logos/alexandra salles.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></li>
           <li><img class="client-logo" src="Images/logos/hanna beauty.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></li>
           <li><img class="client-logo client-logo--lg" src="Images/logos/Namar.png" alt="" aria-hidden="true" loading="lazy" decoding="async"></li>
         </ul>
@@ -99,44 +120,46 @@
     </header>
 
     <!-- ============== ABOUT ============== -->
-    <section class="about container" id="sobre">
-      <div class="about__head">
-        <div>
-          <p class="eyebrow">SOBRE NÓS</p>
-          <h2 class="h2">Da Inconformidade<br />Nasce um Sonho</h2>
+    <section class="about" id="sobre">
+      <div class="about__inner container">
+
+        <!-- Left: eyebrow + heading -->
+        <div class="about__left">
+          <p class="about__eyebrow">SOBRE NÓS</p>
+          <h2 class="about__heading">Conheça nossa história de criação.</h2>
         </div>
+
+        <!-- Center: video with play overlay -->
+        <div class="about__video-wrap">
+          <video
+            class="about__video"
+            id="about-video"
+            src="Images/Venza.mp4"
+            playsinline
+            preload="none"
+            poster="Images/Capa do Video.png"
+          ></video>
+          <button class="about__play-btn" id="about-play-btn" aria-label="Reproduzir vídeo">
+            <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="50" fill="rgba(241,163,0,0.15)"/>
+              <circle cx="50" cy="50" r="40" fill="rgba(241,163,0,0.25)"/>
+              <polygon points="38,28 38,72 74,50" fill="#f1a300"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Right: body text -->
         <p class="about__text">
-          A Venza nasceu da inconformidade
-          <strong>com o marketing vazio, que promete muito e entrega pouco.</strong>
-          Somos estrategistas, criadores e gestores que acreditam que propósito e
-          resultado caminham juntos.
+          A Venza nasceu de uma inquietação genuína:
+          <strong>a recusa em fazer marketing que não transforma.</strong>
+          Cada projeto carrega a convicção de que uma marca bem posicionada
+          muda o rumo de um negócio — e às vezes de uma vida.
           <span class="accent-text">
-            Nossa missão é posicionar marcas com autenticidade e inteligência,
-            gerando resultados reais e conexões verdadeiras.
+            Aqui, propósito não é discurso. É o ponto de partida de tudo
+            que criamos.
           </span>
         </p>
-      </div>
-      <div class="about__carousel">
-        <button class="about__nav about__nav--prev" aria-label="Foto anterior">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18l-6-6 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="about__slides" role="region" aria-label="Galeria de fotos Venza">
-          <div class="about__slide is-active"><img src="Images/Sobre nos imagens/DSC00614.JPG" alt="Equipe Venza" loading="eager" decoding="async"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC00761.JPG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC06046.JPEG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC07210.JPG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC08083.JPEG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC08326.JPG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC08385.JPG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC09349.JPG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC09506.JPG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/DSC09829.JPG" alt="Equipe Venza" loading="lazy"></div>
-          <div class="about__slide"><img src="Images/Sobre nos imagens/IMG_5668.JPG" alt="Equipe Venza" loading="lazy"></div>
-        </div>
-        <button class="about__nav about__nav--next" aria-label="Próxima foto">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18l6-6-6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <p class="about__caption">Fotografia e direção visual<br>Agência Venza</p>
+
       </div>
     </section>
 
@@ -193,6 +216,7 @@
             <div class="case__img" aria-hidden="true"><img src="Images/Projetos/Instel Solar/Instel — 04.jpg" alt="" loading="lazy" decoding="async"></div>
           </div>
         </div>
+      </article>
 
       <!-- Case 2 -->
       <article class="case">
@@ -297,6 +321,65 @@
         >
       </div>
     </section>
+
+    <!-- ============== FOTO CAROUSEL ============== -->
+    <section class="fotoc" id="audiovisual" aria-label="Audiovisual Venza">
+      <!-- slides -->
+      <div class="fotoc__slides">
+        <div class="fotoc__slide is-active" style="background-image:url('Images/Fotos Venza/DSC09452.JPG')" fetchpriority="high"></div>
+        <div class="fotoc__slide" style="background-image:url('Images/Fotos Venza/DSC07179.JPG')"></div>
+        <div class="fotoc__slide" style="background-image:url('Images/Fotos Venza/DSC08071.JPEG')"></div>
+        <div class="fotoc__slide" style="background-image:url('Images/Fotos Venza/DSC09413.JPEG')"></div>
+        <div class="fotoc__slide" style="background-image:url('Images/Fotos Venza/DSC07252.JPG')"></div>
+        <div class="fotoc__slide" style="background-image:url('Images/Fotos Venza/DSC00845.JPEG')"></div>
+      </div>
+      <!-- gradient overlay -->
+      <div class="fotoc__overlay" aria-hidden="true"></div>
+      <!-- content -->
+      <div class="fotoc__content">
+        <!-- top bar -->
+        <div class="fotoc__topbar">
+          <div class="fotoc__brand">
+            <span>Fotografia e Direção Visual</span>
+            <strong>Agência Venza</strong>
+          </div>
+        </div>
+        <!-- bottom bar -->
+        <div class="fotoc__bottom">
+          <div class="fotoc__text">
+            <h2 class="fotoc__title">Elevamos a presença audiovisual da sua marca.</h2>
+            <p class="fotoc__sub">Histórias e imagens que comunicam a essência do seu negócio e traduzem a mensagem da sua marca para o mundo.</p>
+            <a class="btn btn--primary" href="https://api.whatsapp.com/send?phone=5545998117039" target="_blank" rel="noopener">Faça um orçamento sem compromisso</a>
+            <div class="fotoc__nav fotoc__nav--mobile">
+              <button class="fotoc__arrow fotoc__arrow--prev" aria-label="Anterior">
+                <img src="Images/arrow foward.png" alt="" decoding="async" style="transform:rotate(180deg)">
+              </button>
+              <button class="fotoc__arrow fotoc__arrow--next" aria-label="Próximo">
+                <img src="Images/arrow foward.png" alt="" decoding="async">
+              </button>
+            </div>
+          </div>
+          <div class="fotoc__nav fotoc__nav--desktop">
+            <button class="fotoc__arrow fotoc__arrow--prev" aria-label="Anterior">
+              <img src="Images/arrow foward.png" alt="" decoding="async" style="transform:rotate(180deg)">
+            </button>
+            <button class="fotoc__arrow fotoc__arrow--next" aria-label="Próximo">
+              <img src="Images/arrow foward.png" alt="" decoding="async">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== BRIDGE ============== -->
+    <div class="bridge" id="bridge">
+      <img class="bridge__slogan" src="Images/TEXT VECTOR SLOGAN.svg" aria-hidden="true" draggable="false">
+      <div class="bridge__sticky">
+        <div class="bridge__glow" aria-hidden="true"></div>
+        <div class="bridge__burst" aria-hidden="true"></div>
+        <img class="bridge__logo" src="Images/Venza logo translucida.png" alt="Venza" draggable="false">
+      </div>
+    </div>
 
     <!-- ============== WHY VENZA ============== -->
     <section class="why" id="diferenciais">
@@ -453,7 +536,7 @@
     </section>
 
     <!-- ============== TEAM ============== -->
-    <section class="team container">
+    <section class="team container" id="equipe">
       <div class="team__head">
         <p class="eyebrow">A EQUIPE VENZA</p>
         <h2 class="h2">
