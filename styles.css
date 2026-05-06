@@ -1192,15 +1192,14 @@ button {
   margin-top: 0;
 }
 .why__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: 391px 1fr;
+  align-items: end;
+  column-gap: 40px;
   margin-bottom: 32px;
 }
 .why__head .h2 {
-  max-width: 391px;
-  flex-shrink: 0;
+  width: 100%;
 }
 .why__text {
   font-size: 24px;
@@ -1210,7 +1209,7 @@ button {
   color: var(--text-muted);
   margin: 0;
   max-width: 497px;
-  flex-shrink: 0;
+  justify-self: end;
 }
 
 .cards__wrapper {
