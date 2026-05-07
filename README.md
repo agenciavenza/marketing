@@ -30,7 +30,7 @@ Depois abra <http://localhost:5173>.
 1. Hero com título "Fora do Padrão. Conectados com Propósito."
 2. Faixa de logos de clientes
 3. Sobre a Venza ("Da Inconformidade Nasce um Sonho")
-4. Projetos Venza — três cases (Rafain Chopp, Dra. Grasielle, Ali Badawi)
+4. Projetos Venza — três cases (Rafain Chopp, Dra. Grasielle, All Badawi)
 5. Por Que Escolher a Venza? — cinco cards de serviço
 6. Diferenciais — quatro blocos (Performance Real, Venza Flow,
    Propósito no Centro, Comunicação Transparente)

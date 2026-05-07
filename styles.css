@@ -1188,7 +1188,6 @@ button {
     rgba(10, 13, 18, 0) 100%
   );
   padding: 280px 0 120px;
-}
   margin-top: 0;
 }
 .why__head {
@@ -1196,7 +1195,11 @@ button {
   grid-template-columns: 391px 1fr;
   align-items: start;
   column-gap: 40px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
+}
+.why__headline {
+  /* On desktop, keep the h2 and p as direct grid items of .why__head */
+  display: contents;
 }
 .why__head .h2 {
   width: 100%;
@@ -1930,9 +1933,18 @@ button {
   .case__gallery { grid-template-columns: repeat(2, 1fr); }
 
   /* ── Por Que Venza ── */
-  .why__head { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .why__head {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    row-gap: 20px;
+    margin-bottom: 40px;
+  }
   .why__head .h2 { max-width: 100%; }
-  .why__text { max-width: 100%; }
+  .why__text {
+    max-width: 100%;
+    justify-self: start;
+    padding-top: 0;
+  }
   .card { flex: 0 0 300px; }
 
   /* ── Diferenciais ── */
@@ -2110,8 +2122,24 @@ button {
 
   /* ── Por Que Venza ── */
   .why { padding: 64px 20px; }
-  .why__head { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .why__text { font-size: 16px; line-height: 1.6; max-width: 100%; }
+  .why__head {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    row-gap: 0;
+    margin-bottom: 40px;
+  }
+  .why__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .why__text {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+    justify-self: start;
+    padding-top: 0;
+  }
   .card { flex: 0 0 80vw; }
   .card__title { font-size: 26px; letter-spacing: -0.04em; }
   .card__body { font-size: 14px; line-height: 1.6; }
