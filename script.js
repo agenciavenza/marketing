@@ -19,9 +19,9 @@
 // Photo Carousel (Audiovisual section): prev/next slide switching.
 (() => {
   const slides = Array.from(document.querySelectorAll('.fotoc__slide'));
-  const prevBtn = document.querySelector('.fotoc__arrow--prev');
-  const nextBtn = document.querySelector('.fotoc__arrow--next');
-  if (!slides.length || !prevBtn || !nextBtn) return;
+  const prevBtns = Array.from(document.querySelectorAll('.fotoc__arrow--prev'));
+  const nextBtns = Array.from(document.querySelectorAll('.fotoc__arrow--next'));
+  if (!slides.length || !prevBtns.length || !nextBtns.length) return;
 
   let current = 0;
 
@@ -31,17 +31,26 @@
     slides[current].classList.add('is-active');
   };
 
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-
   // Auto-advance every 6 seconds
   let autoTimer = setInterval(() => goTo(current + 1), 6000);
   const resetTimer = () => {
     clearInterval(autoTimer);
     autoTimer = setInterval(() => goTo(current + 1), 6000);
   };
-  prevBtn.addEventListener('click', resetTimer);
-  nextBtn.addEventListener('click', resetTimer);
+
+  prevBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      goTo(current - 1);
+      resetTimer();
+    });
+  });
+
+  nextBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      goTo(current + 1);
+      resetTimer();
+    });
+  });
 })();
 
 // Projects: sticky-stacking effect (poch.studio style).

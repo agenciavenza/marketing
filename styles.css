@@ -153,14 +153,15 @@ button {
   transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 .btn--primary {
-  background: #2F7FFB;
-  color: #ffffff;
+  background: var(--accent);
+  color: var(--bg);
   padding: 22px 36px;
   font-size: 18px;
-  box-shadow: 0 14px 40px -16px rgba(47, 127, 251, 0.6);
+  box-shadow: 0 14px 40px -16px rgba(241, 163, 0, 0.6);
 }
 .btn--primary:hover {
   transform: translateY(-2px);
+  background: var(--accent-2);
   filter: brightness(1.05);
 }
 .btn--projects-cta {}
@@ -286,8 +287,8 @@ button {
   transform: scaleX(1);
 }
 .navbar__cta {
-  background: #2F7FFB;
-  color: #ffffff;
+  background: var(--accent);
+  color: var(--bg);
   font-weight: 700;
   font-size: 14px;
   letter-spacing: -1px;
@@ -301,8 +302,8 @@ button {
 }
 .navbar__cta:hover {
   transform: translateY(-1px);
-  background: #2F7FFB;
-  box-shadow: 0 0 20px 4px rgba(47, 127, 251, 0.35);
+  background: var(--accent-2);
+  box-shadow: 0 0 20px 4px rgba(241, 163, 0, 0.35);
 }
 
 /* Hamburger button — hidden on desktop */
@@ -1278,7 +1279,7 @@ button {
   display: none;
 }
 .card {
-  background: #0D5CD5;
+  background: #203777;
   border-radius: var(--radius-lg);
   padding: 32px;
   display: flex;
@@ -1360,8 +1361,8 @@ button {
   outline-offset: 4px;
 }
 .diff__item.is-active {
-  background: #0D5CD5;
-  border-color: #0D5CD5;
+  background: #203777;
+  border-color: #203777;
   color: #ffffff;
 }
 /* Rolling golden border on hover — a thin highlight that keeps traveling around the card */
@@ -1400,15 +1401,15 @@ button {
   background: conic-gradient(
     from var(--angle, 0deg),
     transparent 0deg,
-    rgba(13, 92, 213, 0.2) 40deg,
-    #0D5CD5 70deg,
-    #6fa9ff 90deg,
-    #0D5CD5 110deg,
-    rgba(13, 92, 213, 0.2) 140deg,
+    rgba(32, 55, 119, 0.2) 40deg,
+    #203777 70deg,
+    #203777 90deg,
+    #203777 110deg,
+    rgba(32, 55, 119, 0.2) 140deg,
     transparent 180deg,
     transparent 360deg
   );
-  filter: drop-shadow(0 0 6px rgba(13, 92, 213, 0.55));
+  filter: drop-shadow(0 0 6px rgba(32, 55, 119, 0.55));
 }
 @property --angle {
   syntax: "<angle>";
