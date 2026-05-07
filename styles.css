@@ -2,8 +2,8 @@
    Venza — design tokens
    ===================================================== */
 :root {
-  --bg: #0a0d12;
-  --bg-2: #070b1d;
+  --bg: #000000;
+  --bg-2: #000000;
   --bg-blue: #1b2340;
   --bg-blue-2: #243858;
   --bg-blue-3: #3f4b60;
@@ -47,7 +47,7 @@ html {
   scroll-padding-top: 96px;
 }
 body {
-  background: var(--bg);
+  background: #000000;
   color: var(--text);
   font-family: var(--font);
   font-weight: 400;
@@ -153,11 +153,11 @@ button {
   transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 .btn--primary {
-  background: var(--accent);
-  color: var(--bg-blue);
+  background: #2F7FFB;
+  color: #ffffff;
   padding: 22px 36px;
   font-size: 18px;
-  box-shadow: 0 14px 40px -16px rgba(241, 163, 0, 0.6);
+  box-shadow: 0 14px 40px -16px rgba(47, 127, 251, 0.6);
 }
 .btn--primary:hover {
   transform: translateY(-2px);
@@ -187,7 +187,7 @@ button {
   transform: translateX(-50%);
   z-index: 9999;
   width: min(1200px, calc(100% - 32px));
-  border-radius: 999px;
+  border-radius: 24px;
   /* Apple liquid glass */
   background:
     linear-gradient(
@@ -209,7 +209,7 @@ button {
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .navbar {
-    background: rgba(10, 13, 18, 0.92);
+    background: rgba(0, 0, 0, 0.92);
   }
 }
 .navbar.is-scrolled {
@@ -286,8 +286,8 @@ button {
   transform: scaleX(1);
 }
 .navbar__cta {
-  background: var(--accent);
-  color: #1b2340;
+  background: #2F7FFB;
+  color: #ffffff;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: -1px;
@@ -301,8 +301,8 @@ button {
 }
 .navbar__cta:hover {
   transform: translateY(-1px);
-  background: #d49000;
-  box-shadow: 0 0 20px 4px rgba(241, 163, 0, 0.35);
+  background: #2F7FFB;
+  box-shadow: 0 0 20px 4px rgba(47, 127, 251, 0.35);
 }
 
 /* Hamburger button — hidden on desktop */
@@ -352,7 +352,7 @@ button {
   gap: 8px;
   padding: 16px 24px 24px;
   border-radius: 24px;
-  background: rgba(12, 16, 32, 0.55);
+  background: rgba(0, 0, 0, 0.55);
   -webkit-backdrop-filter: saturate(180%) blur(40px);
   backdrop-filter: saturate(180%) blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -405,6 +405,7 @@ button {
    ===================================================== */
 .hero {
   position: relative;
+  background: #000000;
   padding: 120px 0 0;
   overflow: hidden;
   min-height: 1080px;
@@ -432,23 +433,7 @@ button {
   position: absolute;
   inset: -200px -200px auto -200px;
   height: 1200px;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  -webkit-mask-image: radial-gradient(
-    ellipse 60% 45% at 50% 35%,
-    black 50%,
-    transparent 75%
-  );
-  mask-image: radial-gradient(
-    ellipse 60% 45% at 50% 35%,
-    black 50%,
-    transparent 75%
-  );
-  opacity: 0.45;
+  display: none;
 }
 
 /* Big circle (planet) — sits at the bottom of the hero */
@@ -458,6 +443,7 @@ button {
   top: 57.8%;
   transform: translateX(-50%);
   width: clamp(600px, 178vw, 2561px);
+  display: none;
   pointer-events: none;
   z-index: 1;
 }
@@ -474,12 +460,7 @@ button {
   transform: translate(-50%, 0);
   width: clamp(600px, 170vw, 2435px);
   height: 48%;
-  background: radial-gradient(
-    ellipse 60% 60% at 50% 100%,
-    rgba(120, 180, 255, 0.55) 0%,
-    rgba(70, 130, 230, 0.22) 40%,
-    transparent 70%
-  );
+  display: none;
   mix-blend-mode: plus-lighter;
   filter: blur(18px);
   pointer-events: none;
@@ -650,7 +631,7 @@ button {
   overflow: hidden;
   /* Tall aspect ratio: ~2:1 height */
   aspect-ratio: 420 / 849;
-  background: #0a0d12;
+  background: #000000;
   cursor: pointer;
 }
 .about__video {
@@ -1066,7 +1047,7 @@ button {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 120px;
-  background: linear-gradient(to bottom, transparent, rgba(10,13,18,0.55));
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.55));
   pointer-events: none;
   z-index: 3;
 }
@@ -1181,12 +1162,7 @@ button {
 .why {
   position: relative;
   z-index: 100;
-  background: linear-gradient(
-    180deg,
-    var(--bg-blue-4) 0%,
-    var(--bg-blue-2) 45%,
-    rgba(10, 13, 18, 0) 100%
-  );
+  background: #000000;
   padding: 280px 0 120px;
   margin-top: 0;
 }
@@ -1209,7 +1185,7 @@ button {
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: -0.03em;
-  color: var(--text-muted);
+  color: #ffffff;
   margin: 0;
   max-width: 497px;
   justify-self: end;
@@ -1302,7 +1278,7 @@ button {
   display: none;
 }
 .card {
-  background: var(--bg-2);
+  background: #0D5CD5;
   border-radius: var(--radius-lg);
   padding: 32px;
   display: flex;
@@ -1334,11 +1310,12 @@ button {
   font-weight: 700;
   letter-spacing: -0.04em;
   margin: 0 0 12px;
+  color: #ffffff;
 }
 .card__copy {
   font-size: 15px;
   line-height: 1.45;
-  color: var(--neutral);
+  color: #ffffff;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -1365,14 +1342,14 @@ button {
 .diff__item {
   position: relative;
   width: 100%;
-  border: 1px solid #314469;
+  border: 1px solid #525252;
   border-radius: 16px;
   padding: 32px 36px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   background: transparent;
-  color: inherit;
+  color: #525252;
   font: inherit;
   text-align: left;
   cursor: pointer;
@@ -1383,7 +1360,9 @@ button {
   outline-offset: 4px;
 }
 .diff__item.is-active {
-  background: #070b1d;
+  background: #0D5CD5;
+  border-color: #0D5CD5;
+  color: #ffffff;
 }
 /* Rolling golden border on hover — a thin highlight that keeps traveling around the card */
 .diff__border {
@@ -1395,13 +1374,13 @@ button {
   background: conic-gradient(
     from var(--angle, 0deg),
     transparent 0deg,
-    rgba(241, 163, 0, 0.15) 40deg,
-    var(--accent) 70deg,
-    #ffe7a8 85deg,
-    #fff7d6 90deg,
-    #ffe7a8 95deg,
-    var(--accent) 110deg,
-    rgba(241, 163, 0, 0.15) 140deg,
+    rgba(82, 82, 82, 0.15) 40deg,
+    #525252 70deg,
+    #777777 85deg,
+    #9a9a9a 90deg,
+    #777777 95deg,
+    #525252 110deg,
+    rgba(82, 82, 82, 0.15) 140deg,
     transparent 180deg,
     transparent 360deg
   );
@@ -1415,7 +1394,21 @@ button {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.25s ease;
-  filter: drop-shadow(0 0 6px rgba(241, 163, 0, 0.55));
+  filter: drop-shadow(0 0 6px rgba(82, 82, 82, 0.55));
+}
+.diff__item.is-active .diff__border {
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0deg,
+    rgba(13, 92, 213, 0.2) 40deg,
+    #0D5CD5 70deg,
+    #6fa9ff 90deg,
+    #0D5CD5 110deg,
+    rgba(13, 92, 213, 0.2) 140deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+  filter: drop-shadow(0 0 6px rgba(13, 92, 213, 0.55));
 }
 @property --angle {
   syntax: "<angle>";
@@ -1438,23 +1431,23 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #9a9a9a;
+  color: #525252;
   margin-bottom: 2px;
   transition: color 0.25s ease;
 }
 .diff__item.is-active .diff__icon {
-  color: var(--accent);
+  color: #ffffff;
 }
 .diff__icon svg,
 .diff__icon img {
   width: 100%;
   height: 100%;
-  filter: brightness(0) saturate(0) invert(60%);
+  filter: brightness(0) saturate(0) invert(32%);
   transition: filter 0.25s ease;
 }
 .diff__item.is-active .diff__icon svg,
 .diff__item.is-active .diff__icon img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(80%) saturate(500%) hue-rotate(5deg) brightness(103%);
+  filter: brightness(0) invert(1);
 }
 .diff__title {
   font-size: 20px;
@@ -1462,22 +1455,22 @@ button {
   letter-spacing: -0.04em;
   line-height: 1.2;
   margin: 0;
-  color: #fff;
+  color: #525252;
   transition: color 0.25s ease;
 }
 .diff__item.is-active .diff__title {
-  color: var(--accent);
+  color: #ffffff;
 }
 .diff__copy {
   font-size: 14px;
   letter-spacing: -0.02em;
   line-height: 1.4;
-  color: #9a9a9a;
+  color: #525252;
   margin: 0;
   transition: color 0.25s ease;
 }
 .diff__item.is-active .diff__copy {
-  color: #adadad;
+  color: #ffffff;
 }
 .diff__media {
   position: relative;
@@ -1485,7 +1478,7 @@ button {
   overflow: hidden;
   min-height: 100%;
   align-self: stretch;
-  background: #0a0d12;
+  background: #000000;
 }
 .diff__panel {
   position: absolute;
@@ -1910,7 +1903,7 @@ button {
   .navbar__cta:not(.navbar__cta--mobile) { display: none; }
   .navbar__burger { display: flex; }
   .navbar__inner { justify-content: space-between; padding: 18px 28px; }
-  .navbar { border-radius: 999px; width: calc(100% - 32px); }
+  .navbar { border-radius: 24px; width: calc(100% - 32px); }
 
   /* ── Hero ── */
   .hero { padding: 120px 0 64px; }
