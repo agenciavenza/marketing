@@ -542,8 +542,15 @@ button {
 .clients__list li {
   display: flex;
   align-items: center;
-  padding: 0 36px;
+  justify-content: center;
+  width: 244px;
+  height: 96px;
+  padding: 0 34px;
   flex-shrink: 0;
+}
+.clients__list li.clients__item--compact {
+  width: 168px;
+  padding: 0 18px;
 }
 @keyframes clients-scroll {
   from { transform: translateX(0); }
@@ -556,10 +563,8 @@ button {
   .clients__list { animation: none; }
 }
 .client-logo {
-  height: 86px;
-  width: auto;
-  max-width: 264px;
-  min-width: 40px;
+  width: 140px;
+  height: 56px;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -571,28 +576,37 @@ button {
 .client-logo:hover {
   opacity: 1;
 }
-.client-logo--xs {
-  height: 46px;
-  max-width: 144px;
+.client-logo--block {
+  width: 134px;
+  height: 56px;
 }
-.client-logo--sm {
-  height: 62px;
-  max-width: 192px;
-}
-.client-logo--md {
-  height: 86px;
-  max-width: 264px;
-}
-.client-logo--lg {
-  height: 106px;
-  max-width: 360px;
-}
-.client-logo--xl {
-  height: 125px;
-  max-width: 408px;
+.client-logo--wordmark {
+  width: 158px;
+  height: 48px;
 }
 .client-logo--wide {
-  padding: 0 24px;
+  width: 168px;
+  height: 46px;
+}
+.client-logo--namar {
+  width: 150px;
+  height: 42px;
+}
+.client-logo--script {
+  width: 178px;
+  height: 54px;
+}
+.client-logo--seal {
+  width: 74px;
+  height: 74px;
+}
+.client-logo--icon {
+  width: 64px;
+  height: 70px;
+}
+.client-logo--monogram {
+  width: 92px;
+  height: 54px;
 }
 
 .about {
@@ -2085,10 +2099,17 @@ button {
   /* ── Clients ── */
   .clients { padding: 40px 0; }
   .clients__list { gap: 0; flex-wrap: nowrap; }
-  .clients__list li { padding: 0 20px; }
-  .client-logo { height: 48px; max-width: 168px; }
-  .client-logo--sm { height: 38px; max-width: 132px; }
-  .client-logo--lg { height: 68px; max-width: 216px; }
+  .clients__list li { width: 178px; height: 74px; padding: 0 22px; }
+  .clients__list li.clients__item--compact { width: 126px; padding: 0 12px; }
+  .client-logo { width: 106px; height: 44px; }
+  .client-logo--block { width: 104px; height: 44px; }
+  .client-logo--wordmark { width: 122px; height: 38px; }
+  .client-logo--wide { width: 130px; height: 36px; }
+  .client-logo--namar { width: 116px; height: 32px; }
+  .client-logo--script { width: 138px; height: 42px; }
+  .client-logo--seal { width: 56px; height: 56px; }
+  .client-logo--icon { width: 50px; height: 58px; }
+  .client-logo--monogram { width: 72px; height: 42px; }
 
   /* ── About ── */
   .about { padding: 64px 0; }
